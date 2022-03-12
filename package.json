@@ -1,12 +1,14 @@
 {
-  "name": "website",
+  "name": "noble-connection-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch",
+    "test:coverage": "jest --collectCoverage --watchAll=false"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.3",
