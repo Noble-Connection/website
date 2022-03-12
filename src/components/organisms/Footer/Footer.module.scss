@@ -1,3 +1,29 @@
 .footerContainer {
+  background-color: #CBD5E0;
+  height: 500px;
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
   flex-direction: column;
+  flex: 1;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 769px) {
+  .footerContainer {
+    height: 350px;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    > * {
+      flex: 1 1 100px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footerContainer > * {
+      flex: 1 1 200px;
+  }
 }

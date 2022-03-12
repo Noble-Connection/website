@@ -1,0 +1,15 @@
+.socialMediaIconsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paddingLeft {
+  padding-left: 25px;
+}
+
+@media screen and (min-width: 769px) {
+  .paddingLeft {
+    padding-left: 35px;
+  }
+}
