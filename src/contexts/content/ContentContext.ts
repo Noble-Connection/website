@@ -1,4 +1,6 @@
 import { createContext } from 'react';
 import { IContentContext } from './types';
 
-export const ContentContext = createContext(<IContentContext>({} as IContentContext));
+export const ContentContext = createContext(
+  <IContentContext>({} as IContentContext),
+);
