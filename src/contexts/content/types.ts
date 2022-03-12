@@ -1,5 +1,12 @@
 export interface IContentContext {
   charityName: string;
+  contactNumber: string;
+  emailAddress: string;
+  pages: {
+    aboutUs: string;
+    contactUs: string;
+    donate: string;
+  };
   links: {
     homePage: string;
     aboutUs: string;
@@ -11,7 +18,13 @@ export interface IContentContext {
   };
   footer: {
     copyright: string;
-    contactNumber: string;
     charityRegistrationDetails: string;
-  }
+    address: {
+      registeredOfficeText: string;
+      firstLine: string;
+      town: string;
+      postcode: string;
+      country: string;
+    };
+  };
 }
