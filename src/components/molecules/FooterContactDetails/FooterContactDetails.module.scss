@@ -1,0 +1,13 @@
+.footerContactDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  min-height: 200px;
+}
+
+@media screen and (min-width: 769px) {
+  .footerContactDetails {
+    margin-top: 0;
+  }
+}

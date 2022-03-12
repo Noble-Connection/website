@@ -1,0 +1,13 @@
+.footerPageLinksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  min-height: 115px;
+}
+
+@media screen and (min-width: 769px) {
+  .footerPageLinksContainer {
+    margin-top: 0;
+  }
+}
