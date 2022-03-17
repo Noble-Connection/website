@@ -2,6 +2,7 @@ import { act, render, RenderResult, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Footer } from './Footer';
 import { ContentProvider } from '../../../contexts/content/ContentProvider';
+import { ChakraProvider } from '@chakra-ui/provider';
 import { mockContentContext } from '../../../__mocks__/mockContexts/mockContexts';
 
 jest.mock('next/link', () => {
@@ -13,16 +14,12 @@ jest.mock('next/link', () => {
 describe('Footer component', () => {
   const renderFooter = (): RenderResult =>
     render(
-      <ContentProvider content={mockContentContext}>
-        <Footer />
-      </ContentProvider>,
+      <ChakraProvider>
+        <ContentProvider content={mockContentContext}>
+          <Footer />
+        </ContentProvider>
+      </ChakraProvider>,
     );
-
-  it('renders correctly', () => {
-    const { container } = renderFooter();
-
-    expect(container).toMatchSnapshot();
-  });
 
   it('directs user to the About Us page', async () => {
     const aboutUsText = mockContentContext.pages.aboutUs;
