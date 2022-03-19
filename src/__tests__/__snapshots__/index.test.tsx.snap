@@ -82,7 +82,7 @@ exports[`Home page renders page unchanged 1`] = `
       class="footerContainer"
     >
       <div
-        class="socialMediaIconsWrapper css-0"
+        class="css-k008qs"
       >
         <a
           href="https://www.facebook.com/noble.connection/"
