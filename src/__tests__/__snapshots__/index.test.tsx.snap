@@ -82,7 +82,7 @@ exports[`Home page renders page unchanged 1`] = `
       class="footerContainer"
     >
       <div
-        class="css-k008qs"
+        class="chakra-stack css-x9juev"
       >
         <a
           href="https://www.facebook.com/noble.connection/"
