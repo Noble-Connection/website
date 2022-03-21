@@ -1,7 +1,7 @@
 import { IconButton, useDisclosure } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
-export const Hamburger = (): JSX.Element => {
+export const MobileToggleNavbar = (): JSX.Element => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
