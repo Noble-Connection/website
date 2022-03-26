@@ -1,0 +1,33 @@
+name: Build and deploy to staging environment
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://prelive.nobleconnection.co.uk
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Node version
+        uses: actions/setup-node@v2
+        with:
+          node_version: '16.x'
+
+      - name: Cache npm depdendencies
+        id: cache-node_modules
+        uses: actions/cache@v2
+        with:
+          path: /.node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install depdendencies
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Build
+        run: npm run build
