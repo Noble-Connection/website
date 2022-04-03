@@ -1,8 +1,7 @@
 name: Build and deploy to staging environment
 on:
   push:
-    branches:
-      - main
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -30,8 +29,11 @@ jobs:
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Build
-        run: npm run build
+      # - name: Build
+      #   run: npm run build
+
+      - name: List outputs
+        run: ls ./
 
       - name: Deploy to staging
         uses: amondnet/vercel-action@v20
