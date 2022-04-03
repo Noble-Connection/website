@@ -33,7 +33,7 @@ jobs:
       #   run: npm run build
 
       - name: List outputs
-        run: ls ./
+        run: ls -a ./
 
       - name: Deploy to staging
         uses: amondnet/vercel-action@v20
