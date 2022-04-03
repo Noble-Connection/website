@@ -25,8 +25,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install dependencies
-        # if: steps.cache-node_modules.outputs.cache-hit != 'true'
-        run: npm i
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        run: npm ci
 
       - name: Build
         run: npm run build
