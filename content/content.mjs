@@ -17,6 +17,7 @@ export const content = {
     },
   ],
   links: {
+    home: '/',
     facebook: 'https://www.facebook.com/noble.connection/',
     twitter: 'https://twitter.com/nobleconnection?lang=en',
     youtube:
