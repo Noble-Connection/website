@@ -9,6 +9,7 @@ export interface IContentContext {
   emailAddress: string;
   navigation: IPage[];
   links: {
+    home: string;
     facebook: string;
     twitter: string;
     youtube: string;
