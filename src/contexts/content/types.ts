@@ -1,17 +1,15 @@
+export interface IPage {
+  label: string;
+  href: string;
+}
+
 export interface IContentContext {
   charityName: string;
   contactNumber: string;
   emailAddress: string;
-  pages: {
-    aboutUs: string;
-    contactUs: string;
-    donate: string;
-  };
+  navigation: IPage[];
   links: {
-    homePage: string;
-    aboutUs: string;
-    contactUs: string;
-    donate: string;
+    home: string;
     facebook: string;
     twitter: string;
     youtube: string;
