@@ -2,16 +2,21 @@ export const content = {
   charityName: 'Noble Connection',
   contactNumber: '020 3633 8996',
   emailAddress: 'info@nobleconnection.co.uk',
-  pages: {
-    aboutUs: 'About Us',
-    contactUs: 'Contact Us',
-    donate: 'Donate',
-  },
+  navigation: [
+    {
+      label: 'About Us',
+      href: '/about-us',
+    },
+    {
+      label: 'Contact Us',
+      href: '/contact-us',
+    },
+    {
+      label: 'Donate',
+      href: '/donate',
+    },
+  ],
   links: {
-    homePage: '/',
-    aboutUs: '/about-us',
-    contactUs: '/contact-us',
-    donate: '/donate',
     facebook: 'https://www.facebook.com/noble.connection/',
     twitter: 'https://twitter.com/nobleconnection?lang=en',
     youtube:
