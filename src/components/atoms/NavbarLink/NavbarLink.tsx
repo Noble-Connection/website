@@ -1,20 +1,20 @@
 import NextLink from 'next/link';
-import { Link, Text } from '@chakra-ui/react';
+import { Link, Text, useMediaQuery } from '@chakra-ui/react';
 import { INavbarLinkProps } from './types';
+import styles from './NavbarLink.module.scss';
 
 export const NavbarLink = ({
   href,
-  color,
-  textDecoration = 'none',
   children,
 }: INavbarLinkProps): JSX.Element => {
+  const [isMobile] = useMediaQuery('(max-width: 768px)');
+
   return (
     <NextLink href={href} passHref>
       <Link
-        color={color}
-        textDecoration={textDecoration}
+        className={styles.navbarLink}
         height={10}
-        paddingLeft={10}
+        paddingLeft={isMobile ? '10' : '0'}
         display="flex"
         alignItems="center"
       >
