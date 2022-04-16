@@ -1,9 +1,11 @@
-import { IconButton, useDisclosure } from '@chakra-ui/react';
+import { IconButton } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { IMobileToggleNavbarProps } from './types';
 
-export const MobileToggleNavbar = (): JSX.Element => {
-  const { isOpen, onToggle } = useDisclosure();
-
+export const MobileToggleNavbar = ({
+  onToggle,
+  isOpen,
+}: IMobileToggleNavbarProps): JSX.Element => {
   return (
     <IconButton
       onClick={onToggle}
