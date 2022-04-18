@@ -7,3 +7,10 @@ import '@testing-library/jest-dom';
 beforeEach(() => {
   jest.clearAllMocks();
 });
+
+jest.mock('next/image', () => ({
+  __esModule: true,
+  default: () => {
+    return 'Next.js image stub';
+  },
+}));

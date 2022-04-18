@@ -1,7 +1,7 @@
 import NextLink from 'next/link';
 import Image from 'next/image';
 import { Link } from '@chakra-ui/react';
-import { useContent } from 'src/contexts/content/useContent';
+import { useContent } from '../../../contexts/content/useContent';
 import logo from '../../../../public/images/noble-connection-logo.png';
 
 export const Logo = (): JSX.Element => {

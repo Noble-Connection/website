@@ -22,7 +22,7 @@ describe('Footer component', () => {
     );
 
   it('directs user to the About Us page', async () => {
-    const aboutUsText = mockContentContext.pages.aboutUs;
+    const aboutUsText = mockContentContext.navigation[0].label;
     const { getByText, queryByText } = renderFooter();
 
     act(() => {
@@ -37,7 +37,7 @@ describe('Footer component', () => {
   it('directs user to the Contact Us page', async () => {
     const { getByText, queryByText } = renderFooter();
 
-    const contactUsLink = mockContentContext.pages.contactUs;
+    const contactUsLink = mockContentContext.navigation[1].label;
 
     act(() => {
       userEvent.click(getByText(contactUsLink));
@@ -51,7 +51,7 @@ describe('Footer component', () => {
   it('directs user to the Donate page', async () => {
     const { getByText, queryByText } = renderFooter();
 
-    const donateLink = mockContentContext.pages.donate;
+    const donateLink = mockContentContext.navigation[2].label;
 
     act(() => {
       userEvent.click(getByText(donateLink));

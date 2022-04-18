@@ -1,7 +1,7 @@
 import { useDisclosure, useMediaQuery, Box, Stack } from '@chakra-ui/react';
-import { Logo } from 'src/components/atoms/Logo/Logo';
-import { MobileToggleNavbar } from 'src/components/atoms/MobileToggleNavbar/MobileToggleNavbar';
-import { NavbarLinks } from 'src/components/molecules/NavbarLinks/NavbarLinks';
+import { Logo } from '../../atoms/Logo/Logo';
+import { MobileToggleNavbar } from '../../atoms/MobileToggleNavbar/MobileToggleNavbar';
+import { NavbarLinks } from '../../molecules/NavbarLinks/NavbarLinks';
 import styles from './Navbar.module.scss';
 
 export const Navbar = (): JSX.Element => {
