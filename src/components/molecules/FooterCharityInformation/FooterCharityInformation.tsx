@@ -1,5 +1,5 @@
-import { FooterCopyright } from '../../atoms/FooterCopyright/FooterCopyright';
-import { FooterCharityRegistrationDetails } from '../../atoms/FooterCharityRegistrationDetails/FooterCharityRegistrationDetails';
+import { FooterCopyright } from '@/components/atoms/FooterCopyright/FooterCopyright';
+import { FooterCharityRegistrationDetails } from '@/components/atoms/FooterCharityRegistrationDetails/FooterCharityRegistrationDetails';
 
 export const FooterCharityInformation = (): JSX.Element => {
   return (

@@ -1,7 +1,7 @@
 import { act, render, RenderResult, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Footer } from './Footer';
-import { ContentProvider } from '../../../contexts/content/ContentProvider';
+import { ContentProvider } from '@/contexts/content/ContentProvider';
 import { ChakraProvider } from '@chakra-ui/provider';
 import { mockContentContext } from '../../../__mocks__/mockContexts/mockContexts';
 

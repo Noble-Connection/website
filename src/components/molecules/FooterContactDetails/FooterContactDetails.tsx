@@ -1,6 +1,6 @@
-import { FooterAddress } from '../../atoms/FooterAddress/FooterAddress';
-import { FooterLink } from '../../atoms/FooterLink/FooterLink';
-import { useContent } from '../../../contexts/content/useContent';
+import { FooterAddress } from '@/components/atoms/FooterAddress/FooterAddress';
+import { FooterLink } from '@/components/atoms/FooterLink/FooterLink';
+import { useContent } from '@/contexts/content/useContent';
 import styles from './FooterContactDetails.module.scss';
 
 export const FooterContactDetails = (): JSX.Element => {
