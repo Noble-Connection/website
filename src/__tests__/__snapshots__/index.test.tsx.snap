@@ -1,10 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home page renders page unchanged 1`] = `
+exports[`Home page should render page unchanged 1`] = `
 <div>
   <div
     class="container"
   >
+    <nav
+      class="navbar"
+    >
+      <div
+        class="navbarContainer css-0"
+      >
+        <a
+          class="chakra-link css-f4h6uy"
+          href="/"
+        >
+          Next.js image stub
+        </a>
+        <a
+          class="chakra-link navbarLink css-znxnlz"
+          href="/about-us"
+        >
+          <p
+            class="chakra-text css-i3jkqk"
+          >
+            About Us
+          </p>
+        </a>
+        <a
+          class="chakra-link navbarLink css-znxnlz"
+          href="/contact-us"
+        >
+          <p
+            class="chakra-text css-i3jkqk"
+          >
+            Contact Us
+          </p>
+        </a>
+        <a
+          class="chakra-link navbarLink css-znxnlz"
+          href="/donate"
+        >
+          <p
+            class="chakra-text css-i3jkqk"
+          >
+            Donate
+          </p>
+        </a>
+      </div>
+    </nav>
     <main
       class="main"
     >
