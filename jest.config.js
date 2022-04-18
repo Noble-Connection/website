@@ -8,10 +8,6 @@ const createJestConfig = nextJest({
 // Add any custom config to be passed to Jest
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
-  moduleNameMapper: {
-    // Handle module aliases (this will be automatically configured for you soon)
-    '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
-  },
   testEnvironment: 'jest-environment-jsdom',
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
