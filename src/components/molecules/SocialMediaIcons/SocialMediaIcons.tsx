@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Stack } from '@chakra-ui/react';
 import { FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
-import { useContent } from '../../../contexts/content/useContent';
+import { useContent } from '@/contexts/content/useContent';
 import styles from './SocialMediaIcons.module.scss';
 
 export const SocialMediaIcons = (): JSX.Element => {

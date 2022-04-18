@@ -1,5 +1,5 @@
-import { FooterLink } from '../../atoms/FooterLink/FooterLink';
-import { useContent } from '../../../contexts/content/useContent';
+import { FooterLink } from '@/components/atoms/FooterLink/FooterLink';
+import { useContent } from '@/contexts/content/useContent';
 import styles from './FooterPageLinks.module.scss';
 
 export const FooterPageLinks = (): JSX.Element => {

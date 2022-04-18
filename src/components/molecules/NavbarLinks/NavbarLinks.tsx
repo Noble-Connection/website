@@ -1,5 +1,5 @@
-import { NavbarLink } from '../../../components/atoms/NavbarLink/NavbarLink';
-import { useContent } from '../../../contexts/content/useContent';
+import { NavbarLink } from '@/components/atoms/NavbarLink/NavbarLink';
+import { useContent } from '@/contexts/content/useContent';
 
 export const NavbarLinks = (): JSX.Element => {
   const { navigation } = useContent();
