@@ -18,7 +18,12 @@ const customJestConfig = {
   transform: {
     '^.+\\.mjs$': 'babel-jest',
   },
-  moduleDirectories: ['node_modules', 'src'],
+  moduleNameMapper: {
+    '@/components/(.*)': '<rootDir>/src/components/$1',
+    '@/content/(.*)': '<rootDir>/content/$1',
+    '@/contexts/(.*)': '<rootDir>/src/contexts/$1',
+    '@/mocks/(.*)': '<rootDir>/src/__mocks__/$1',
+  },
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
