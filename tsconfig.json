@@ -19,7 +19,8 @@
       "@/components/*": ["src/components/*"],
       "@/content/*": ["content/*"],
       "@/contexts/*": ["src/contexts/*"],
-      "@/styles/*": ["src/styles/*"]
+      "@/styles/*": ["src/styles/*"],
+      "@/mocks/*": ["src/__mocks__/*"]
     }
   },
   "include": [
