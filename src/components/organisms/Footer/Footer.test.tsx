@@ -1,9 +1,9 @@
 import { act, render, RenderResult, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { ChakraProvider } from '@chakra-ui/provider';
 import { Footer } from './Footer';
 import { ContentProvider } from '@/contexts/content/ContentProvider';
-import { ChakraProvider } from '@chakra-ui/provider';
-import { mockContentContext } from '../../../__mocks__/mockContexts/mockContexts';
+import { mockContentContext } from '@/mocks/mockContexts/mockContexts';
 
 jest.mock('next/link', () => {
   return ({ children }: { children: JSX.Element }) => {
@@ -21,7 +21,7 @@ describe('Footer component', () => {
       </ChakraProvider>,
     );
 
-  it('directs user to the About Us page', async () => {
+  it('should direct user to the About Us page', async () => {
     const aboutUsText = mockContentContext.navigation[0].label;
     const { getByText, queryByText } = renderFooter();
 
@@ -34,7 +34,7 @@ describe('Footer component', () => {
     });
   });
 
-  it('directs user to the Contact Us page', async () => {
+  it('should direct user to the Contact Us page', async () => {
     const { getByText, queryByText } = renderFooter();
 
     const contactUsLink = mockContentContext.navigation[1].label;
@@ -48,7 +48,7 @@ describe('Footer component', () => {
     });
   });
 
-  it('directs user to the Donate page', async () => {
+  it('should direct user to the Donate page', async () => {
     const { getByText, queryByText } = renderFooter();
 
     const donateLink = mockContentContext.navigation[2].label;

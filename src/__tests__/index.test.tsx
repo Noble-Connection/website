@@ -2,7 +2,7 @@ import { render, RenderResult } from '@testing-library/react';
 import { ChakraProvider } from '@chakra-ui/provider';
 import Home from '../pages/index';
 import { ContentProvider } from '@/contexts/content/ContentProvider';
-import { mockContentContext } from '../__mocks__/mockContexts/mockContexts';
+import { mockContentContext } from '@/mocks/mockContexts/mockContexts';
 
 describe('Home page', () => {
   const renderHomePage = (): RenderResult =>
