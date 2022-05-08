@@ -18,7 +18,7 @@ exports[`Home page should render page unchanged 1`] = `
           Next.js image stub
         </a>
         <a
-          class="chakra-link navbarLink css-znxnlz"
+          class="chakra-link css-17jtewt"
           href="/about-us"
         >
           <p
@@ -28,7 +28,7 @@ exports[`Home page should render page unchanged 1`] = `
           </p>
         </a>
         <a
-          class="chakra-link navbarLink css-znxnlz"
+          class="chakra-link css-17jtewt"
           href="/contact-us"
         >
           <p
@@ -38,7 +38,7 @@ exports[`Home page should render page unchanged 1`] = `
           </p>
         </a>
         <a
-          class="chakra-link navbarLink css-znxnlz"
+          class="chakra-link css-17jtewt"
           href="/donate"
         >
           <p
