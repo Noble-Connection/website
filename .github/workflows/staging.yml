@@ -1,4 +1,7 @@
 name: Build and deploy to staging environment
+env:
+  VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+  VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
 on:
   push:
     branches:
@@ -19,31 +22,24 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - name: Cache npm dependencies
+      - name: Cache npm Dependencies
         id: cache-node_modules
         uses: actions/cache@v3
         with:
           path: /.node_modules
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
 
-      - name: Install dependencies
+      - name: Install Dependencies
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm i
 
-      - name: Set up token
-        run: npx vercel pull --yes --token=${VERCEL_TOKEN}
-        env:
-          VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
-          VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      - name: Pull Vercel Environment Information
+        run: npx vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build
-        run: npx vercel build
-        env:
-          VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
-          VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
+      - name: Build Project Artifacts
+        run: npx vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Deploy to staging environment
+      - name: Deploy to Staging Environment
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
