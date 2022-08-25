@@ -1,43 +1,53 @@
-# name: Build and deploy to staging environment
-# on:
-#   push:
-#     branches:
-#       - main
-# jobs:
-#   build-and-deploy:
-#     runs-on: ubuntu-latest
-#     environment:
-#       name: staging
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v2
+name: Build and deploy to staging environment
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-#       - name: Node version
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: '16.x'
-#           cache: 'npm'
-#           cache-dependency-path: '**/package-lock.json'
+      - name: Node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
 
-#       - name: Cache npm dependencies
-#         id: cache-node_modules
-#         uses: actions/cache@v3
-#         with:
-#           path: /.node_modules
-#           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+      - name: Cache npm dependencies
+        id: cache-node_modules
+        uses: actions/cache@v3
+        with:
+          path: /.node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
 
-#       - name: Install dependencies
-#         if: steps.cache-node_modules.outputs.cache-hit != 'true'
-#         run: npm i
+      - name: Install dependencies
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        run: npm i
 
-#       - name: Build
-#         run: npm run build
+      - name: Set up token
+        run: npx vercel pull --yes --token=${VERCEL_TOKEN}
+        env:
+          VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
-#       - name: Deploy to staging
-#         uses: amondnet/vercel-action@v20
-#         with:
-#           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-#           github-token: ${{ secrets.GITHUB_TOKEN }}
-#           vercel-org-id: ${{ secrets.ORG_ID }}
-#           vercel-project-id: ${{ secrets.PROJECT_ID }}
-#           vercel-args: .next
+      - name: Build
+        run: npx vercel build
+        env:
+          VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
+
+      - name: Deploy to staging environment
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-org-id: ${{ secrets.ORG_ID }}
+          vercel-project-id: ${{ secrets.PROJECT_ID }}
+          vercel-args: .next
